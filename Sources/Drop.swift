@@ -43,6 +43,9 @@ public struct Drop: ExpressibleByStringLiteral {
   ///   - titleColor: Title color. Defaults to `.label`.
   ///   - subtitleColor: Subtitle color. Defaults to `.secondaryLabel`.
   ///   - iconColor: Icon color. Defaults to `.secondaryLabel`.
+  ///   - backgroundColor: Background color. Defaults to `.secondarySystemBackground`.
+  ///   - buttonColor: Button color. Defaults to `.white`.
+  ///   - buttonBackgroundColor: Button background color. Defaults to `.link`.
   public init(
     title: String,
     titleNumberOfLines: Int = 1,
@@ -55,7 +58,10 @@ public struct Drop: ExpressibleByStringLiteral {
     accessibility: Accessibility? = nil,
     titleColor: UIColor = .label,
     subtitleColor: UIColor = .secondaryLabel,
-    iconColor: UIColor = .secondaryLabel
+    iconColor: UIColor = .secondaryLabel,
+    backgroundColor: UIColor = .secondarySystemBackground,
+    buttonColor: UIColor = .white,
+    buttonBackgroundColor: UIColor = .link
   ) {
     self.title = title.trimmingCharacters(in: .whitespacesAndNewlines)
     self.titleNumberOfLines = titleNumberOfLines
@@ -72,6 +78,9 @@ public struct Drop: ExpressibleByStringLiteral {
     self.titleColor = titleColor
     self.subtitleColor = subtitleColor
     self.iconColor = iconColor
+    self.backgroundColor = backgroundColor
+    self.buttonColor = buttonColor
+    self.buttonBackgroundColor = buttonBackgroundColor
   }
 
   /// Create a new accessibility object.
@@ -85,7 +94,10 @@ public struct Drop: ExpressibleByStringLiteral {
     accessibility = .init(message: title)
     titleColor = .label
     subtitleColor = .secondaryLabel
-      iconColor = .secondaryLabel
+    iconColor = .secondaryLabel
+    backgroundColor = .secondarySystemBackground
+    buttonColor = .white
+    buttonBackgroundColor = .link
   }
 
   /// Title.
@@ -123,6 +135,11 @@ public struct Drop: ExpressibleByStringLiteral {
   
   /// Title Color.
   public var iconColor: UIColor
+
+  public var backgroundColor: UIColor
+
+  public var buttonColor: UIColor
+  public var buttonBackgroundColor: UIColor
 }
 
 public extension Drop {

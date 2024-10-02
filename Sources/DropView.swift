@@ -29,7 +29,7 @@ internal final class DropView: UIView {
     self.drop = drop
     super.init(frame: .zero)
 
-    backgroundColor = .secondarySystemBackground
+    backgroundColor = drop.backgroundColor
 
     addSubview(stackView)
 
@@ -174,8 +174,8 @@ internal final class DropView: UIView {
     button.translatesAutoresizingMaskIntoConstraints = false
     button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     button.clipsToBounds = true
-    button.backgroundColor = .link
-    button.tintColor = .white
+    button.backgroundColor = drop.buttonBackgroundColor
+    button.tintColor = drop.buttonColor
     button.imageView?.contentMode = .scaleAspectFit
     button.contentEdgeInsets = .init(top: 7.5, left: 7.5, bottom: 7.5, right: 7.5)
     return button
