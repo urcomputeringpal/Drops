@@ -223,7 +223,8 @@ extension UIFont {
 
 extension CGRect {
   var cornerRadius: CGFloat {
-    return min(width, height) / 2
+    return min(width, height) * 0.2237
+
   }
 }
 #endif
